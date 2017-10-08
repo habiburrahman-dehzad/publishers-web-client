@@ -1,0 +1,48 @@
+﻿@model IEnumerable<AspNet.Identity.MongoDB.IdentityRole>
+@{
+    ViewBag.Title = "Index";
+}
+<header>
+    <div class="container">
+        <div class="row">
+            <div class="col-lg-12">
+                <i class="fa fa-users fa-4x"></i>
+                <div class="title-text">
+                    <span class="title">All Roles</span>
+                    <hr class="star-light">
+                    <span class="description">See the List of All Roles</span>
+                </div>
+            </div>
+        </div>
+    </div>
+</header>
+
+<section>
+    <div class="container">
+        <p>
+            @Html.ActionLink("Create New", "Create")
+        </p>
+        <table class="table">
+            <tr>
+                <th>
+                    @Html.DisplayNameFor(model => model.Name)
+                </th>
+                <th>
+                </th>
+            </tr>
+            @foreach (var item in Model)
+            {
+                <tr>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.Name)
+                    </td>
+                    <td>
+                        @Html.ActionLink("Edit", "Edit", new { id = item.Id }) |
+                        @Html.ActionLink("Details", "Details", new { id = item.Id }) |
+                        @Html.ActionLink("Delete", "Delete", new { id = item.Id })
+                    </td>
+                </tr>
+            }
+        </table>
+    </div>
+</section>
