@@ -1,5 +1,5 @@
 # publishers-web-client
-##Publishers’ Web Service and Library Members’ Web Application
+## Publishers’ Web Service and Library Members’ Web Application
 
 This is a Visual Studio solution containing 11 projects. The goal of this project is to demonstrate the following:
 
@@ -27,7 +27,7 @@ Creating the web application and web service to implement the following function
 1.	Web service architecture. The components should be loosely coupled and should operate fairly independently (using Dependency Injection and IoC containers)
 2.	Web application would allow users to register, authenticate and maintain their list of book demands.
 
-** Prerequisites:**
+**Prerequisites:**
 
 The following prerequisites should be installed on the system in order to run the web service and web application properly:
 1- MongoDB >= v3.2.8
