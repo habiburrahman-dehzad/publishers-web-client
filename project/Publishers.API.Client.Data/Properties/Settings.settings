@@ -1,0 +1,15 @@
+﻿<?xml version='1.0' encoding='utf-8'?>
+<SettingsFile xmlns="http://schemas.microsoft.com/VisualStudio/2004/01/settings" CurrentProfile="(Default)" GeneratedClassNamespace="Publishers.API.Client.Data.Properties" GeneratedClassName="Settings">
+  <Profiles />
+  <Settings>
+    <Setting Name="MongoURL" Type="System.String" Scope="Application">
+      <Value Profile="(Default)">mongodb://localhost</Value>
+    </Setting>
+    <Setting Name="DatabaseName" Type="System.String" Scope="Application">
+      <Value Profile="(Default)">PublishersDb</Value>
+    </Setting>
+    <Setting Name="BookDemandsCollection" Type="System.String" Scope="Application">
+      <Value Profile="(Default)">BookDemand</Value>
+    </Setting>
+  </Settings>
+</SettingsFile>

@@ -1,0 +1,56 @@
+﻿@model AspNet.Identity.MongoDB.IdentityRole
+@{
+    ViewBag.Title = "Details";
+}
+<header>
+    <div class="container">
+        <div class="row">
+            <div class="col-lg-12">
+                <i class="fa fa-users fa-4x"></i>
+                <div class="title-text">
+                    <span class="title">Role Details</span>
+                    <hr class="star-light">
+                    <span class="description">See the List of Users in this Role</span>
+                </div>
+            </div>
+        </div>
+    </div>
+</header>
+
+<section>
+    <div class="container">
+        <div>
+            <h4>Roles</h4>
+            <hr />
+            <dl class="dl-horizontal">
+                <dt>
+                    @Html.DisplayNameFor(model => model.Name)
+                </dt>
+                <dd>
+                    @Html.DisplayFor(model => model.Name)
+                </dd>
+            </dl>
+        </div>
+        <h4>List of users in this role</h4>
+        @if (ViewBag.UserCount == 0)
+        {
+            <hr />
+            <p>No users found in this role.</p>
+        }
+        <table class="table">
+            @foreach (var item in ViewBag.Users)
+            {
+                <tr>
+                    <td>
+                        @item.UserName
+                    </td>
+                </tr>
+            }
+        </table>
+        <p>
+            @Html.ActionLink("Edit", "Edit", new { id = Model.Id }) |
+            @Html.ActionLink("Back to List", "Index")
+        </p>
+
+    </div>
+</section>

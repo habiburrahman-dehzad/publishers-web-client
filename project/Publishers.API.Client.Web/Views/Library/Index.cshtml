@@ -1,0 +1,75 @@
+﻿@model IEnumerable<Publishers.API.Client.Core.Models.BookModel>
+
+@using GridMvc.Html
+
+@{
+    ViewBag.Title = "List of Books";
+}
+
+<header>
+    <div class="container">
+        <div class="row">
+            <div class="col-lg-12 text-center">
+                <i class="fa fa-book fa-lg fa-5x"></i>
+                <div class="title-text">
+                    <span class="title">List of All Books</span>
+                    <hr class="star-light">
+                    <span class="description">You can see the list of all available books</span>
+                </div>
+            </div>
+        </div>
+    </div>
+</header>
+
+<section>
+    <div class="container">
+        <div class="row">
+            @Html.ActionLink("View List of Your Demands", "UsersDemands", null, new { @class = "btn btn-primary" })
+        </div>
+        <div class="row">
+
+            @Html.Grid(Model).Columns(columns =>
+            {
+                columns.Add()
+                    .Encoded(false)
+                    .Sanitized(false)
+                    .SetWidth(150)
+                    .RenderValueAs(d =>
+                        @<b>
+                            @Html.ActionLink("Place Demand", "PlaceDemand", new { id = d._id })
+                        </b>
+                    );
+
+                columns.Add(model => model.Title)
+                    .Titled("Book Title")
+                    .Sortable(true)
+                    .Filterable(true);
+
+                columns.Add(model => model.Publisher)
+                    .Titled("Book Publisher")
+                    .Sortable(true)
+                    .Filterable(true);
+
+                columns.Add(model => model.Authors)
+                    .Titled("Authors")
+                    .Encoded(false)
+                    .Sanitized(false)
+                    .SetWidth(150)
+                    .RenderValueAs(b =>
+                        @Html.Raw(string.Join("<br />", b.Authors ?? new string[] { "No Author" }))
+                    );
+
+                columns.Add(model => model.Description)
+                    .Sortable(true)
+                    .Filterable(true);
+            }).WithPaging(15).Sortable().Filterable().WithMultipleFilters()
+
+        </div>
+    </div>
+</section>
+
+@section Scripts {
+    <script src="@Url.Content("~/Scripts/jquery-3.1.0.min.js")" type="text/javascript"> </script>
+    <link href="@Url.Content("~/Content/Gridmvc.css")" rel="stylesheet" type="text/css" />
+    <script src="@Url.Content("~/Scripts/gridmvc.min.js")" type="text/javascript"> </script>
+}
