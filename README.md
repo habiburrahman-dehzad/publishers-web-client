@@ -30,9 +30,9 @@ Creating the web application and web service to implement the following function
 **Prerequisites:**
 
 The following prerequisites should be installed on the system in order to run the web service and web application properly:
-1- MongoDB >= v3.2.8
-2- Visual Studio 2015
-3- Nuget Package Manager
+1. MongoDB >= v3.2.8
+2. Visual Studio 2015
+3. Nuget Package Manager
 
 **Steps to Prepare:**
 
